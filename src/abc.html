@@ -1,0 +1,52 @@
+<!--api 호출 예제-->
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <script>
+        let temp = document.createElement('div');
+        
+        const APIkey = 'cf2fc2a2d2abeffb1f3b5b3835ef4c48'
+        let [lat, lon] = [0, 0];
+        let localName = ''
+        function countryAPI (cityName) {
+            fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=${APIkey}`)
+            .then(res => {return res.json()}).then(data => {
+                lat = data[0]["lat"];
+                lon = data[0]["lon"];
+                
+                localName = data[0]["local_names"]["ko"];
+                test();
+            })
+        }
+
+        function test() {
+            
+            console.log(lat, lon);
+            fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${APIkey}&units=metric&lang=kr`)
+            .then(res => {return res.json()}).then(data => {
+                console.log(data["main"]["temp"])
+                temp.innerText = localName + ", " + String(data["main"]["temp"]) + "도"
+            })
+        }
+
+        countryAPI('seoul')
+        navigator.geolocation.getCurrentPosition(function(pos) {
+    console.log(pos);
+    var latitude = pos.coords.latitude;
+    var longitude = pos.coords.longitude;
+    alert("현재 위치는 : " + latitude + ", "+ longitude);
+});
+    </script>
+</head>
+<body>
+    <div class="temp">
+        <img src="../이미지/m_korea.jpg" usemap="#image-map">
+
+        <map name="image-map">
+            <area target="" alt="seoul" title="seoul" href="nohref" coords="111,110,117,120,127,121,132,111,125,103" shape="poly">
+        </map>
+    </div>
+    <script>
+        
+    </script>
+</body>
