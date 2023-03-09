@@ -1,5 +1,97 @@
 .App {
   text-align: center;
 }
+.map {
+  overflow: auto hidden;
+  position: relative;
+  padding: 35px 0;
+}
 
-
+.nation-map {
+  position: relative;
+  margin: 0 auto;
+  width: 293px;
+  height: 361px;
+  position:relative;
+  
+  background-image: url("../이미지/sp_weather_b8b9d125.png");
+  background-position: -295px 0;
+  background-repeat: no-repeat;
+  background-size: 965px 896px;
+}
+.zone {
+  position: absolute;
+  min-width: 64px;
+  padding-top: 22px;
+  text-align: center;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+.독도 {
+  top: 90px;
+  left: 264px;
+}
+.제주 {
+  top: 335px;
+  left: 45px;
+}
+.안동시 {
+  top: 125px;
+  left: 215px;
+}
+.수원 {
+  top: 110px;
+  left: 104px;
+}
+.부산 {
+  top: 257px;
+  left: 230px;
+}
+.전주 {
+  top: 179px;
+  left: 96px;
+}
+.울산 {
+  top: 207px;
+  left: 255px;
+}
+.광주 {
+  top: 233px;
+  left: 93px;
+}
+.대전 {
+  top: 153px;
+  left: 142px;
+}
+.춘천 {
+  top: 15px;
+  left: 160px;
+}
+.서울 {
+  top: 50px;
+  left: 108px;
+}
+.여수 {
+  top: 265px;
+  left: 147px;
+}
+.청주 {
+  top: 78px;
+  left: 173px;
+}
+.목포시 {
+  top: 266px;
+  left: 49px;
+}
+.강릉시 {
+  top: 48px;
+  left: 217px;
+}
+.대구 {
+  top: 187px;
+  left: 195px;
+}
+.백령도 {
+  top: 59px;
+  left: 19px;
+}
